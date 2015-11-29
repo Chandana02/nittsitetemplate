@@ -44,6 +44,20 @@
 <!--[if IE 7]>
   <link rel="stylesheet" type="text/css" href="/assets/css/ie/ie7.css" />
 <![endif]-->
+<!-- JS and jQuery --> 
+<script src="assets/js/jquery-1.11.3.min.js"></script> 
+<!--<script src="assets/js/jquery-mobile-1.3.2.js"></script>--> 
+<script src="assets/js/modernizr.custom.17475.js"></script> 
+<script src="assets/js/bootstrap.min.js"></script> 
+<script src="assets/colorbox/jquery.colorbox.js"></script>
+<script src="assets/js/jquery.timeago.js"></script> 
+
+<!--[if lt IE 9]>
+    <script src="assets/js/respond.js"></script>
+<![endif]--> 
+<!-- Custom JS --> 
+<script src="assets/js/base.js?v=1.3.1"></script> 
+<script src="assets/js/homepage.js?v=1.3.1"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -52,6 +66,28 @@
   ga('create', 'UA-1860414-1', 'stanford.edu');
   ga('send', 'pageview');
 </script>
+<script>
+var i=0;
+    function dropdown_display () {
+      if(i%2==0)
+        document.getElementById('dept-dropdown').style.display="block";
+      else
+        document.getElementById('dept-dropdown').style.display="none";
+      i++;
+    }
+</script>
+<style type="text/css">
+  #dept-dropdown{
+    display: none;
+  }
+  #dept-dropdown li{
+    list-style-type: none;
+  }
+  #global-footer{
+    position: relative;
+    bottom: -60px;
+  }
+</style>
 </head>
 
 <body>
@@ -120,16 +156,14 @@ background-size: cover;background-position: top center !important; background-re
           <div id="primary-nav" tabindex="0">
             <ul class="nav navbar-nav" aria-label="primary navigation">
               <li id="nav-about"> <a href="#">About</a></li>
-              <li id="nav-about"> <a href="#">Administration</a></li>
+              <li id="nav-administration"> <a href="#">Administration</a></li>
                <li id="nav-academics"> <a href="#">Academic </a> </li>
               <li id="nav-admission"> <a href="#">Admission</a> </li>
-               <li  id="tog"> <a href="#">Departments </a>
-              </li>
+              <li id="nav-department" onclick="dropdown_display();"><a href="#">Departments <span style="font-size:60%; color:#8C1515;">&#x25BC;</span></a> </li>
               <li id="nav-research"> <a href="#">Events</a></li>
               <li id="nav-campuslife"> <a href="#">Contact</a></li>
             </ul>
-          </div>
-          <div id="gateway-nav">
+             <div id="gateway-nav">
             <h4><span class="fa fa-chevron-circle-right"></span>Information for...</h4>
             <ul id="gateways" class="pull-right" aria-label="gateways">
               <li><div id="nav-search" role="search">
@@ -152,6 +186,30 @@ background-size: cover;background-position: top center !important; background-re
               <li id="nav-alumni" class="su-link" data-ua-action="alumni-gateway" data-ua-label="nav"><a href="http://alumni.stanford.edu/get/page/about-us">Alumni</a></li>-->
             </ul>
           </div>
+            <div id="dept-dropdown" class="row" style="width=100%">
+              <div class="col-md-3">
+                <li><a href="#" style="font-size:150%;"> <span style="font-size:100%; color:#8C1515;">&#x2771; &nbsp;</span>CSE</a></li>
+                <li><a href="#" style="font-size:150%;"><span style="font-size:100%; color:#8C1515;">&#x2771; &nbsp;</span>ECE</a></li>
+                <li><a href="#" style="font-size:150%;"><span style="font-size:100%; color:#8C1515;">&#x2771; &nbsp;</span>EEE</a></li>
+              </div>
+              <div class="col-md-3">
+                <li><a href="#" style="font-size:150%;"><span style="font-size:100%; color:#8C1515;">&#x2771; &nbsp;</span>Civil</a></li>
+                <li><a href="#" style="font-size:150%;"><span style="font-size:100%; color:#8C1515;">&#x2771; &nbsp;</span>Chemical</a></li>
+                <li><a href="#" style="font-size:150%;"><span style="font-size:100%; color:#8C1515;">&#x2771; &nbsp;</span>Architecture</a></li>
+              </div>
+              <div class="col-md-3">
+                <li><a href="#" style="font-size:150%;"><span style="font-size:100%; color:#8C1515;">&#x2771; &nbsp;</span>Meta</a></li>
+                <li><a href="#" style="font-size:150%;"><span style="font-size:100%; color:#8C1515;">&#x2771; &nbsp;</span>Production</a></li>
+                <li><a href="#" style="font-size:150%;"><span style="font-size:100%; color:#8C1515;">&#x2771; &nbsp;</span>ICE</a></li>
+              </div>  
+              <div class="col-md-3">
+                <li><a href="#" style="font-size:150%;"><span style="font-size:100%; color:#8C1515;">&#x2771; &nbsp;</span>Mechanical</a></li>
+                <li><a href="#" style="font-size:150%;"><span style="font-size:100%; color:#8C1515;">&#x2771; &nbsp;</span>MCA</a></li>
+                <li><a href="#" style="font-size:150%;"><span style="font-size:100%; color:#8C1515;">&#x2771; &nbsp;</span>DOMS</a></li>
+              </div>  
+            </div>
+          </div>
+         
         </div>
       </div>
       <!-- /nav-collapse --> 
@@ -170,12 +228,7 @@ background-size: cover;background-position: top center !important; background-re
 </div>
 <!-- /mainmenu --> 
 
-    <div id="content" role="main" tabindex="0"> 
-      
-      
-
- 
-      
+    <div id="content" role="main" tabindex="0">       
       <!-- Feature Banner -->
       <div id="feature-banner" class="container carousel slide margin-bottom-20"> 
         
@@ -452,7 +505,7 @@ background-size: cover;background-position: top center !important; background-re
 <!-- #su-wrap end --> 
 
 <!-- #footer --> 
-<div id="footer" class="clearfix footer" role="contentinfo">
+<footer id="footer" class="clearfix footer" role="contentinfo">
   <div class="container">
     <div id="footer-content" class="row">
       <div class="col-xs-12 col-sm-1-4 col-md-3">
@@ -556,22 +609,9 @@ background-size: cover;background-position: top center !important; background-re
   <!-- global-footer end --> 
   <!-- Global footer snippet end --> 
   
-</div>
+</footer>
  
 
-<!-- JS and jQuery --> 
-<script src="assets/js/jquery-1.11.3.min.js"></script> 
-<!--<script src="assets/js/jquery-mobile-1.3.2.js"></script>--> 
-<script src="assets/js/modernizr.custom.17475.js"></script> 
-<script src="assets/js/bootstrap.min.js"></script> 
-<script src="assets/colorbox/jquery.colorbox.js"></script>
-<script src="assets/js/jquery.timeago.js"></script> 
 
-<!--[if lt IE 9]>
-    <script src="assets/js/respond.js"></script>
-<![endif]--> 
-<!-- Custom JS --> 
-<script src="assets/js/base.js?v=1.3.1"></script> 
-<script src="assets/js/homepage.js?v=1.3.1"></script>
 </body>
 </html>
